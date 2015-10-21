@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Syncwits</title>
+<script type="text/javascript" src="scripts/swfobject/swfobject.js"></script>
+        
+    <script type="text/javascript">
+      var flashvars = {};
+      flashvars.cssSource = "piecemaker.css";
+      flashvars.xmlSource = "piecemaker.xml";
+		
+      var params = {};
+      params.play = "true";
+      params.menu = "false";
+      params.scale = "showall";
+      params.wmode = "transparent";
+      params.allowfullscreen = "true";
+      params.allowscriptaccess = "always";
+      params.allownetworking = "all";
+	  
+      swfobject.embedSWF('piecemaker.swf', 'piecemaker', '1000', '600', '10', null, flashvars,    
+      params, null);
+    
+    </script>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link href='http://fonts.googleapis.com/css?family=Archivo+Narrow:400,700,400italic' rel='stylesheet' type='text/css'>
+<script src="js/jquery-1.8.3.js"></script>
+
+</head>
+
+<body style="overflow:hidden">
+<script>
+$(document).ready(function(){
+$(".button").click(function(){
+  $("#wait").animate({opacity: 0},500);
+  $("#ticker").animate({opacity: 1},500);
+  
+});
+});
+</script>
+<div id="header">
+<div class="logo">
+<img name="Syncwits" src="images/logo2.png" alt="Syncwits"  />
+
+</div>
+<h3 class="mainhead">WE BRIDGE THE KNOWLEDGE GAP</h3>
+</div>
+<a href="#">
+<div id="wait" class="button" >
+<h3>Wait for it!</h3>
+</div></a>
+<div id="container">
+<div id="content">
+<div style=" position:relative; left:-250px; top:-150px; width:900px; overflow:hidden; height:520px; ">
+ 	<div id="piecemaker">
+      <p>Put your alternative Non Flash content here.</p>
+    </div>
+</div>
+</div>
+
+<div id="ticker">
+KNOWLEDGE FLOWS IN<br /><br /><br />
+<div id="timer">
+<b id="days"></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b id="hours"></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b id="minutes"></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b id="seconds"></b>
+</div>
+
+
+<script>
+
+/*
+Count down until any date script-
+By JavaScript Kit (www.javascriptkit.com)
+Over 200+ free scripts here!
+*/
+
+
+//change the text below to reflect your own,
+var before=""
+var current=""
+var montharray=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
+
+function countdown(yr,m,d){
+theyear=yr;themonth=m;theday=d
+var today=new Date()
+var todayy=today.getYear()
+if (todayy < 1000)
+todayy+=1900
+var todaym=today.getMonth()
+var todayd=today.getDate()
+var todayh=today.getHours()
+var todaymin=today.getMinutes()
+var todaysec=today.getSeconds()
+var todaystring=montharray[todaym]+" "+todayd+", "+todayy+" "+todayh+":"+todaymin+":"+todaysec
+futurestring=montharray[m-1]+" "+d+", "+yr
+dd=Date.parse(futurestring)-Date.parse(todaystring)
+dday=Math.floor(dd/(60*60*1000*24)*1)
+dhour=Math.floor((dd%(60*60*1000*24))/(60*60*1000)*1)
+dmin=Math.floor(((dd%(60*60*1000*24))%(60*60*1000))/(60*1000)*1)
+dsec=Math.floor((((dd%(60*60*1000*24))%(60*60*1000))%(60*1000))/1000*1)
+if(dday==0&&dhour==0&&dmin==0&&dsec==1){
+document.forms.count.count2.value=current
+return
+}
+else
+if (dday < 10)
+dday = "0"+dday
+if (dhour < 10)
+dhour = "0"+dhour
+if (dmin < 10)
+dmin = "0"+dmin
+if (dsec < 10)
+dsec = "0"+dsec
+x=document.getElementById("days");  // Find the element
+x.innerHTML= dday;    // Change the content
+a=document.getElementById("hours");  // Find the element
+a.innerHTML= dhour;    // Change the content
+b=document.getElementById("minutes");  // Find the element
+b.innerHTML= dmin;    // Change the content
+c=document.getElementById("seconds");  // Find the element
+c.innerHTML= dsec;    // Change the content
+setTimeout("countdown(theyear,themonth,theday)",1000)
+}
+//enter the count down date using the format year/month/day
+countdown(2013,08,26)
+</script>
+<div class="words">
+&nbsp;&nbsp;DAYS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+HOURS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+MINUTES&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+SECONDS
+</div>
+<br/><br/>
+</div>
+<div id="links">
+<a href="#">AboutUs</a>&nbsp;&nbsp;&nbsp;<a href="#">Blog</a>&nbsp;&nbsp;&nbsp;<a href="http://www.facebook.com/Syncwits">FacebookPage</a>&nbsp;&nbsp;&nbsp;<a href="#">Careers</a>&nbsp;&nbsp;&nbsp;<a href="#">ContactUs</a>
+<br/><br/>
+<span style="font-size:11px; letter-spacing:1px; color:#FFF;">
+CopyRight © 2012 Syncwits.</span>
+</div>
+
+</div>
+
+    
+<div id="footer">
+</div>
+</body>
+</html>
